@@ -1,0 +1,17 @@
+5-FORMATAGE CHAMP 
+
+Type numéro :
+
+@SetAtt("NUM",@format(NUM,"0000"))
+
+
+Type Texte :
+
+@SetAtt("ORDERNUMBER",@Right("0000" & ORDERNUMBER,4))
+
+
+Formatage Chrono :
+
+@format(@chronogetnext(ISSUER & "NAZ"),"0000")
+
+

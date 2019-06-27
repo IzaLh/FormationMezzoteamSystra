@@ -1,0 +1,23 @@
+4-CHRONO
+
+- Chrono sur une clé :
+
+@chronogetnext("cricri")
+
+@chronogetnext(ISSUER)
+
+@chronogetnext(PHASE & ISSUER)
+
+Réinitialiser la table chrono :
+
+@chronogetnext(ISSUER & "toto")
+
+- Chrono par année :
+
+Un champ ANNEE texte calculé avec formule suivante :
+@Format(@Now,"yyyy")
+
+
+Un champ NUMERO texte qui s'increment à chaque nouvelle année
+@ChronoGetNext(ANNEE)
+
