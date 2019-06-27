@@ -1,0 +1,23 @@
+@IfEmptyValue(@GetTaskAtt("ReturnCode"),0,100)
+
+@IfEmptyValue(@GetTaskAtt("ReturnCode"),0,60)+ @Ifs(@len(MONTANT)>0,40,0)
+
+@IfEmptyValue(@GetTaskAtt("ReturnCode"),0,60)+ @Ifs(MONTANT="10000",40,0)
+
+
+@IfEmptyValue(@GetTaskAtt("ReturnCode"),0,50)+@ifs(@FileTemplateCount()=0,50,0)
+
+
+
+@IfEmptyValue(@GetTaskAtt("ReturnCode"), 0, 60)+
+
+@Ifs( @IsMember(@GetTaskAtt("ReturnCode"),TRUE,"HM":"ACC"), 40,0)+
+
+@Ifs( @IsMember(@GetTaskAtt("ReturnCode"),TRUE,"REF":"ACC O") AND @GetNbFiles>0, 40,0)
+
+
+@IfEmptyValue(@GetTaskAtt("ReturnCode"), 0, 60)+
+
+@Ifs( @Ifs(@GetTaskAtt("ReturnCode")="OK"), 40,0)
+
+

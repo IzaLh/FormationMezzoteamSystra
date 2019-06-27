@@ -1,0 +1,13 @@
+@Returnif(METIER = "3", @GroupId("Groupe-special"));
+@Returnif(METIER = "4", @GroupId("Groupe-special"));
+@Returnif(METIER = "5", @GroupId("Groupe-special"))
+
+donne
+
+@Returnif(@IsMember(METIER,TRUE,"3":"4":"5"),@GroupId("Groupe-special"));
+
+
+@Returnif(@IsMember(METIER,TRUE,"3":"4":"5"),@GetAtt("SPECIAL"));
+@Returnif(@IsMember(METIER,TRUE,"3":"4":"5"),SPECIAL);
+
+@Returnif(@IsMember(METIER,TRUE,"3":"4":"5"),@GroupId("VAL_"+METIER));
